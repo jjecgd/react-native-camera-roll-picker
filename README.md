@@ -9,7 +9,7 @@
 
 CameraRoll Picker component for React native
 
-<a href="https://raw.githubusercontent.com/jeanpan/react-native-camera-roll-picker/master/demo/demo.gif"><img src="https://raw.githubusercontent.com/jeanpan/react-native-camera-roll-picker/master/demo/demo.gif" width="350"></a>
+<a href="https://github.com/jjecgd/react-native-camera-roll-picker/tree/master/demo/demo.gif"><img src="https://github.com/jjecgd/react-native-camera-roll-picker/tree/master/demo/demo.gif" width="350"></a>
 
 Requires `react-native >=0.43.0`
 

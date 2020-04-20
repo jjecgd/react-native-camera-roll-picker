@@ -1,10 +1,5 @@
-import React, { Component } from 'react';
-import {
-  Image,
-  StyleSheet,
-  Dimensions,
-  TouchableOpacity,
-} from 'react-native';
+import React, {Component} from 'react';
+import {Image, StyleSheet, Dimensions, TouchableOpacity} from 'react-native';
 import PropTypes from 'prop-types';
 
 const checkIcon = require('./circle-check.png');
@@ -20,8 +15,8 @@ const styles = StyleSheet.create({
 
 class ImageItem extends Component {
   componentWillMount() {
-    let { width } = Dimensions.get('window');
-    const { imageMargin, imagesPerRow, containerWidth } = this.props;
+    let {width} = Dimensions.get('window');
+    const {imageMargin, imagesPerRow, containerWidth} = this.props;
 
     if (typeof containerWidth !== 'undefined') {
       width = containerWidth;
@@ -34,27 +29,25 @@ class ImageItem extends Component {
   }
 
   render() {
-    const {
-      item, selected, selectedMarker, imageMargin,
-    } = this.props;
+    const {item, selected, index, selectedMarker, imageMargin} = this.props;
+    const marker = selectedMarker(index) || (
+      <Image
+        style={[styles.marker, {width: 25, height: 25}]}
+        source={checkIcon}
+      />
+    );
 
-    const marker = selectedMarker || (<Image
-      style={[styles.marker, { width: 25, height: 25 }]}
-      source={checkIcon}
-    />);
-
-    const { image } = item.node;
+    const {image} = item.node;
 
     return (
       <TouchableOpacity
-        style={{ marginBottom: imageMargin, marginRight: imageMargin }}
-        onPress={() => this.handleClick(image)}
-      >
+        style={{marginBottom: imageMargin, marginRight: imageMargin}}
+        onPress={() => this.handleClick(image)}>
         <Image
-          source={{ uri: image.uri }}
-          style={{ height: this.imageSize, width: this.imageSize }}
+          source={{uri: image.uri}}
+          style={{height: this.imageSize, width: this.imageSize}}
         />
-        {(selected) ? marker : null}
+        {selected ? marker : null}
       </TouchableOpacity>
     );
   }
@@ -68,7 +61,8 @@ ImageItem.defaultProps = {
 ImageItem.propTypes = {
   item: PropTypes.object,
   selected: PropTypes.bool,
-  selectedMarker: PropTypes.element,
+  selectedMarker: PropTypes.func,
+  index: PropTypes.number,
   imageMargin: PropTypes.number,
   imagesPerRow: PropTypes.number,
   onClick: PropTypes.func,

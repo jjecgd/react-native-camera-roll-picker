@@ -22,19 +22,23 @@ class Row extends PureComponent {
 
   renderImage(item, isSelected) {
     const {
+      arrayObjectIndexOf,
       imageMargin,
       selectedMarker,
       imagesPerRow,
       containerWidth,
+      selected,
     } = this.props;
 
     const { uri } = item.node.image;
+    const index = arrayObjectIndexOf(selected, 'uri', uri);
 
     return (
       <ImageItem
         key={uri}
         item={item}
         selected={isSelected}
+        index={index}
         imageMargin={imageMargin}
         selectedMarker={selectedMarker}
         imagesPerRow={imagesPerRow}

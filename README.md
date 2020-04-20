@@ -60,5 +60,5 @@ import CameraRollPicker from 'react-native-camera-roll-picker';
 ## How to install
 
 ```
-$ yarn install react-native-camera-roll-picker@git+https://github.com/jjecgd/react-native-camera-roll-picker.git
+$ yarn add react-native-camera-roll-picker@git+https://github.com/jjecgd/react-native-camera-roll-picker.git
 ```

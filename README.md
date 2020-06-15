@@ -44,6 +44,7 @@ import CameraRollPicker from 'react-native-camera-roll-picker';
 - `callback` : Callback function when images was selected. (is required!). Return a selected image array and current selected image.
 - `initialNumToRender` : Specifies how many rows we want to render on our first render pass. (Default: 5)
 - `groupTypes` : The group where the photos will be fetched, one of 'Album', 'All', 'Event', 'Faces', 'Library', 'PhotoStream' and 'SavedPhotos'. (Default: SavedPhotos)
+- `groupName` : Specifies filter on group names, like 'friend' or custom album titles. (Default: '')
 - `assetType` : The asset type, one of 'Photos', 'Videos' or 'All'. (Default: Photos)
 - `selected` : Already be selected images array. (Default: [])
 - `selectSingleItem` : Boolean to select only one single image at time. (Default: `false`)

@@ -122,8 +122,9 @@ class CameraRollPicker extends Component {
       first: 100,
       groupTypes,
       assetType,
-      groupName,
     };
+
+    if (groupName) fetchParams.groupName = groupName;
 
     if (Platform.OS === "android") {
       // not supported in android

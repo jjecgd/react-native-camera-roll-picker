@@ -132,12 +132,13 @@ class CameraRollPicker extends Component {
   }
 
   doFetch() {
-    const { groupTypes, assetType, groupName } = this.props;
+    const { groupTypes, assetType, groupName, include } = this.props;
 
     const fetchParams = {
       first: 100,
       groupTypes,
       assetType,
+      include,
     };
 
     if (groupName) fetchParams.groupName = groupName;
@@ -187,12 +188,8 @@ class CameraRollPicker extends Component {
 
   renderImage(item) {
     const { selected } = this.state;
-    const {
-      imageMargin,
-      selectedMarker,
-      imagesPerRow,
-      containerWidth,
-    } = this.props;
+    const { imageMargin, selectedMarker, imagesPerRow, containerWidth } =
+      this.props;
 
     const { uri } = item.node.image;
     const isSelected = arrayObjectIndexOf(selected, "uri", uri) >= 0;
